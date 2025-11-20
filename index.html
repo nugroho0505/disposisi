@@ -47,10 +47,11 @@
 
 <body>
 <div class="a5-wrap">
-    <div class="barcode-small" style="text-align:center; margin-bottom:10px;">
-    <img src="https://quickchart.io/chart?c={type:'barCode',data:{code:'{{kode}}',format:'CODE128',displayValue:false}}" style="height:40px; align:right;" >
-    <div style="font-size:10px; margin-top:4px; text-align:right;">{{kode}}</div>
-  </div>
+    
+<div class="barcode-small" style="text-align:center; margin-bottom:10px;">
+  <img id="barcode" src="" style="height:40px; align:right;">
+  <div id="barcode-text" style="font-size:10px; margin-top:4px; text-align:right;"></div>
+
 <table style="width:100%; border-collapse:collapse; font-size:12px;" border="1">
   <colgroup>
     <col style="width:25%;">
@@ -182,8 +183,21 @@
 
     document.body.innerHTML = html;
   }
-
   replacePlaceholders();
+  // Ganti teks di bawah barcode
+  document.getElementById("barcode-text").innerText = kode;
+
+  // Buat URL QuickChart barcode (harus URL encoded)
+  const barcodeURL = "https://quickchart.io/chart?c=" + encodeURIComponent(
+    JSON.stringify({
+      type: "barCode",
+      data: { code: kode, format: "CODE128", displayValue: false }
+    })
+  );
+
+  // Set src img
+  document.getElementById("barcode").src = barcodeURL;
+</script>
 
   // Print otomatis setelah load
   window.onload = () => {
