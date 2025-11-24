@@ -1,0 +1,217 @@
+a<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>A5 PDF</title>
+ <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+ 
+  <style>
+    @page {
+      size: A5 portrait;
+      margin: 10mm;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 55px;
+    }
+    table, th, td {
+      padding: 4px;
+      font-size: 10px;
+      text-align:left;
+    }
+    .a5-wrap {
+      width: 148mm;
+      min-height: 210mm;
+      margin: 0 auto;
+      padding: 5mm;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      position: relative; /* penting agar QR absolute mengacu ke sini */
+    }
+
+    /* QR Code pojok kanan atas */
+    .qr-box {
+      position: absolute;
+      top: 3mm;
+      right: 10mm;
+      text-align: center;
+    }
+    #qrcode {
+      width: 45px;
+      height: 45px;
+    }
+    #qrtext {
+      font-size: 12px;
+      margin-top: 7px;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+<div class="a5-wrap">
+
+  <!-- QR Code pojok kanan atas -->
+  <div class="qr-box">
+      <div id="qrcode"></div>
+      <div id="qrtext"></div>
+  </div>
+
+<table style="width:100%; border-collapse:collapse; font-size:12px;" border="1">
+  <colgroup>
+    <col style="width:25%;">
+    <col style="width:30%;">
+    <col style="width:5%;">
+    <col style="width:15%;">
+    <col style="width:30%;">
+  </colgroup>
+  <tr>
+    <td colspan="5" style="text-align:center; font-weight:bold;">
+      KEMENTERIAN HUKUM REPUBLIK INDONESIA<br>
+      DIREKTORAT JENDERAL ADMINISTRASI HUKUM UMUM
+    </td>
+  </tr>
+  <tr>
+    <td colspan="5" style="text-align:center; font-weight:bold;">
+      LEMBAR DISPOSISI<br>
+      DIREKTUR PERDATA
+    </td>
+  </tr>
+
+  <tr>
+    <td rowspan="3" style="border-right:0;">Nomor Agenda/Registrasi</td>
+    <td rowspan="3" colspan="2" style="border-left:0;">: {{nomor_agenda}}</td>
+
+    <!-- Kolom yang ingin kamu hilangkan garis bawahnya -->
+    <td  border="0" colspan="2" style="border-bottom:0; height=40px;">Tingkat Keamanan :<br>
+
+<table style="border-collapse:collapse; margin-top:4px;">
+  <colgroup>
+    <col style="width:15%;">
+    <col style="width:15%;">
+    <col style="width:15%;">
+    <col style="width:15%;">
+    <col style="width:15%;">
+    <col style="width:15%;">
+    <col style="width:15%;">
+  </colgroup>
+  <tr>
+    <td style="border:0; padding:1px 8px; text-align:left;">SR</td>
+    <td style=" border:1px solid #444; width:14px; height:14px;"></td>
+
+    <td style="border:0; padding:1px 1px; text-align:center;">R</td>
+    <td style="border:1px solid #444; width:14px; height:14px;"></td>
+
+    <td style="border:0; padding:1px 1px; text-align:center">B</td>
+    <td style="border:1px solid #444; width:14px; height:14px;"></td>
+  </tr>
+</table>
+
+</td>
+    </tr>
+    <tr>
+<td rowspan="2" colspan="2" style="border-top:0"></td>
+  </tr>
+  <tr>
+    
+  </tr>
+  <tr>
+    <td style="border-right:0; height:20px; vertical-align:top; padding: 5px ">Tanggal Penerimaan</td>
+    <td colspan="2" style="border-left:0; height:50px; vertical-align:top;">: {{tanggal_penerimaan}}</td>
+    <td colspan="2" style="height:20px; vertical-align:top; padding:5px">Tanggal Penyelesaian</td>
+  </tr>
+
+  <tr>
+    <td style="border-right:0;">Tanggal Surat</td>
+    <td colspan="4" style="border-left:0;">: {{tanggal_surat}}</td><tr>
+    <td style="border-right:0;">Nomor Surat</td>
+    <td colspan="4" style="border-left:0;">: {{nomor_surat}}</td>
+  </tr>
+  <tr>
+    <td style="border-right:0;">Dari</td><td colspan="4" style="border-left:0;">:  {{dari}} </td>
+  </tr>
+
+  <tr>
+    <td style="border-right:0;">Ringkasan Isi</td><td colspan="4" style="border-left:0;">: {{ringkasan}}</td>
+  </tr>
+
+  <!-- Bagian Diteruskan Kepada & Disposisi -->
+  <tr>
+    <th colspan="3" style="text-align:center;">Diteruskan Kepada :</th>
+    <th colspan="2" style="text-align:center;">Disposisi</th>
+  </tr>
+
+  <tr>
+    <td colspan="2" style="border-bottom:0;">KASUBDIT PROFESI KEPERDATAAN</td>
+    <td border="1"></td>
+    <td colspan="2" rowspan="10"></td>
+  </tr>
+
+  <tr><td colspan="2" style="border-bottom:0; border-top:0;">KASUBDIT LAYANAN HUKUM PERDATA</td><td border="0"></td></tr>
+  <tr><td colspan="2"style="border-bottom:0; border-top:0;">KEPALA SUB BAGIAN TATA USAHA</td><td border="0"></td></tr>
+  <tr><td colspan="2" style="border-bottom:0; border-top:0;">POKJA BHP & KOMITE BERSAMA</td><td border="0"></td></tr>
+  <tr><td colspan="2" style="border-bottom:0; border-top:0;">POKJA SEKRETARIAT MPPN & MKNP</td><td border="0"></td></tr>
+  <tr><td colspan="2"style="border-bottom:0; border-top:0;">POKJA PENANGANAN FIDUSIA & PKS</td><td border="0"></td></tr>
+  <tr><td colspan="2" style="border-bottom:0; border-top:0;">POKJA PENDAPAT HUKUM, LO & ADVOKASI</td><td border="0"></td></tr>
+  <tr><td colspan="2" style="border-bottom:0; border-top:0;">POKJA DUKUNGAN LAYANAN</td><td border="0"></td></tr>
+  <tr><td colspan="2"style="border-bottom:0; border-top:0;">.........</td></td><tdstyle="border-bottom:0;"></td></tr>
+
+  <tr>
+    <td style="height:60px; vertical-align:top; padding:5px">PARAF :</td>
+    <td style="border-top:0; border-right:0; height:60px"></td><td style="border-left:0;"></td>
+  </tr>
+</table>
+
+</div>
+
+<!-- Library QR -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+<script>
+  function getParam(key) {
+    const url = new URL(window.location.href);
+    return url.searchParams.get(key) || "";
+  }
+
+  const kode = getParam("kode");
+  const params = {
+    kode,
+    tanggal_penerimaan: getParam("tanggal_penerimaan"),
+    tanggal_surat: getParam("tanggal_surat"),
+    nomor_surat: getParam("nomor_surat"),
+    dari: getParam("dari"),
+    ringkasan: getParam("ringkasan"),
+    nomor_agenda: getParam("nomor_agenda")
+  };
+
+  function replacePlaceholders() {
+    let html = document.body.innerHTML;
+    Object.keys(params).forEach(k => {
+      html = html.replace(new RegExp(`{{${k}}}`, "g"), params[k]);
+    });
+    document.body.innerHTML = html;
+  }
+  replacePlaceholders();
+
+  // Generate QR
+  new QRCode(document.getElementById("qrcode"), {
+    text: kode,
+    width: 50,
+    height: 50,
+  });
+
+  document.getElementById("qrtext").innerText = kode;
+
+  // Print otomatis
+  window.onload = () => {
+    setTimeout(() => window.print(), 500);
+  };
+</script>
+
+</body>
+</html>
