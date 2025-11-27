@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>A5 PDF</title>
+ <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+ 
+  <style>
+    @page {
+      size: A5 portrait;
+      margin: 5mm;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      padding: 4px;
+      font-size: 9px;
+      text-align:left;
+    }
+    .a5-wrap {
+      width: 148mm;
+      min-height: 210mm;
+      margin: 0 auto;
+      padding: 5mm;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      position: relative; /* penting agar QR absolute mengacu ke sini */
+    }
+
+    /* QR Code pojok kanan atas */
+    .qr-box {
+      position: absolute;
+      top: 3mm;
+      right: 5mm;
+      text-align: center;
+    }
+    #qrcode {
+      width: 55px;
+      height: 55px;
+    }
+    #qrtext {
+      font-size: 12px;
+      margin-top: 4px;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+<div class="a5-wrap">
+
+  <!-- QR Code pojok kanan atas -->
+
+<table style="width:100%; border-collapse:collapse; font-size:9px;" border="1">
+  <colgroup>
+    <col style="width:5%;">
+    <col style="width:8%;">
+    <col style="width:5%;">
+    <col style="width:8%;">
+    <col style="width:5%;">
+    <col style="width:8%;">
+    <col style="width:6%;">
+     <col style="width:40%;">
+    
+  </colgroup>
+  <tr>
+    <td colspan="8" style="text-align:center; font-weight:bold;">
+      LEMBAR DISPOSISI<br>
+DIREKTORAT PERDATA<br>
+SUB DIREKTORAT PROFESI KEPERDATAAN
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" style="border-right:0;">Nomor Agenda</td>
+    <td  colspan="5" style="border-left:0;">: {{nomor_agenda}}</td>
+    </tr>
+  <tr>
+    <td colspan="3"style="border-right:0; vertical-align:top; ">Tanggal Diterima</td>
+    <td colspan="5" style="border-left:0;">: {{tanggal_penerimaan}}</td>
+  </tr>
+
+  <tr>
+    <td colspan="3"style="border-right:0;">Tanggal Surat</td>
+    <td colspan="5" style="border-left:0;">: {{tanggal_surat}}</td><tr>
+    <td colspan="3"style="border-right:0;">Nomor Surat</td>
+    <td colspan="5" style="border-left:0;">: {{nomor_surat}}</td>
+  </tr>
+  <tr>
+    <td colspan="3"style="border-right:0;">Asal Surat</td><td colspan="5" style="border-left:0;">:  {{dari}} </td>
+  </tr>
+
+  <tr>
+    <td colspan="3"style="border-right:0;">Hal </td><td colspan="5" style="border-left:0;">: {{ringkasan}}</td>
+  </tr>
+  <tr><td colspan="8"></td></tr>
+  <tr>
+    <td style="text-align:center;"></td><td style="font-size:12px">SR</td><td></td><td style="font-size:12px">R</td><td></td><td style="font-size:12px">B</td>
+  </tr>
+  <tr><td colspan="8"></td></tr>
+<tr>
+  <td id="c01"></td><td colspan="5">Setuju</td><td colspan="2"style="text-align:Center;"><b>Diteruskan Kepada</b></td>
+</tr>
+<tr>
+  <td id="c02"></td><td colspan="5">Teliti & Pendapat</td><td id="d0101" rowspan="2"></td><td rowspan="2">Pengangkatan & Perpindahan Notaris</td>
+</tr>
+<tr>
+  <td id="c03"></td><td colspan="5">Untuk Diketahui</td>
+</tr>
+<tr>
+    <td id="c04"></td><td colspan="5">Catat & Simpan /Arsip</td><td id="d0102" rowspan="2"></td>	<td rowspan="2">Pemberhentian & Perpanjangan Masa Jabatan Notaris</td>
+</tr>
+<tr>
+  <td id="c05"></td><td colspan="5">Laksanakan Sesuai Disposisi Dir. Perdata</td>
+</tr>
+<tr>
+  <td id="c06"></td><td colspan="5">Konsepkan Jadwal</td><td id="d0103" rowspan="2"></td><td rowspan="2">Pembinaan dan Pengawasan Notaris		
+		</td>
+</tr>
+<tr>
+  <td id="c07"></td><td colspan="5">Untuk Perhatian</td>
+</tr>
+<tr>
+    <td id="c08"></td><td colspan="5">Lihat Disposisi Saya<td id="d0104" rowspan="2"></td>	<td rowspan="2" >Sekretariat Majelis Pengawas Pusat Notaris</td>
+</tr>
+<tr>
+  <td id="c09"></td><td colspan="5">Pelajari</td>
+</tr>
+<tr>
+  <td id="c10"></td><td colspan="5">Koordinasikan dengan .......................</td><td rowspan="2"></td><td id="d0105" rowspan="2">Pendaftaran, Perpanjangan dan Pengawasan Kurator dan Pengurus		
+		</td>
+</tr>
+<tr>
+  <td id="c11"></td><td colspan="5">Dirapatkan</td>
+</tr>
+<tr>
+    <td id="c12"></td><td colspan="5">Edarkan<td rowspan="2"></td><td id="d0106" rowspan="2">Pengangkatan Advokat Asing</td>
+</tr>
+<tr>
+  <td id="c13"></td><td colspan="5">Monitor Perkembangannya</td></tr>
+<tr>
+  <td id="c14"></td><td colspan="5">Lihat DIPA</td><td rowspan="2"></td><td id="d0107" rowspan="2">Pengangkatan & Pembinaan Penerjemah Tersumpah		
+		</td>
+</tr>
+<tr>
+  <td id="c15"></td><td colspan="5">Dibuatkan Surat</td>
+</tr>
+<tr>
+    <td id="c16"></td><td colspan="5">Update Data</td><td colspan="2"style="text-align:center;"><b>Instruksi / Informasi :</b></td>
+</tr>
+<tr>
+  <td id="c17"></td><td colspan="5">Ingatkan Saya</td><td colspan="2" rowspan="7">{{info}}</td>
+</tr>
+<tr>
+  <td id="c18"></td><td colspan="5">Mendampingi Saya</td>
+</tr>
+<tr>
+  <td id="c19"></td><td colspan="5">Harap Mewakili</td>
+</tr>
+<tr>
+  <td id="c20"></td><td colspan="5">Ditindaklanjuti</td>
+</tr>
+<tr>
+  <td id="c21"></td><td colspan="5">Siapkan Bahan</td>
+</tr>
+<tr>
+  <td id="c22"></td><td colspan="5">Siapkan Jawaban</td>
+</tr>
+<tr>
+  <td id="c23"></td><td colspan="5">Hubungi Yang Bersangkutan</td>
+</tr>
+
+    
+</table>
+
+</div>
+
+
+<script>
+  function getParam(key) {
+    const url = new URL(window.location.href);
+    return url.searchParams.get(key) || "";
+  }
+
+  const kode = getParam("kode");
+  const params = {
+    kode,
+    tanggal_penerimaan: getParam("tanggal_penerimaan"),
+    tanggal_surat: getParam("tanggal_surat"),
+    nomor_surat: getParam("nomor_surat"),
+    dari: getParam("dari"),
+    ringkasan: getParam("ringkasan"),
+    nomor_agenda: getParam("nomor_agenda"),
+    info: getParam("info"),
+  };
+
+  function replacePlaceholders() {
+    let html = document.body.innerHTML;
+    Object.keys(params).forEach(k => {
+      html = html.replace(new RegExp(`{{${k}}}`, "g"), params[k]);
+    });
+    document.body.innerHTML = html;
+  }
+  replacePlaceholders();
+  let diteruskan = (getParam("diteruskan") || "").split(",").map(x => x.trim());
+
+diteruskan.forEach(id => {
+  let td = document.getElementById(id);
+  if (td) {
+    td.innerHTML = "✔";
+    td.style.textAlign = "center";
+    td.style.fontWeight = "bold";
+  }
+});
+let check= (getParam("check") || "").split(",").map( y => y.trim());
+check.forEach(id =>{
+  let ck = document.getElementById(id);
+  if(ck){
+    ck.innerHTML  = "✔";
+    ck.style.textAlign ="center";
+    ck.style.fontWeight ="bold";
+  }
+}
+);
+
+  // Generate QR
+  new QRCode(document.getElementById("qrcode"), {
+    text: kode,
+    width: 70,
+    height: 70
+  });
+
+  document.getElementById("qrtext").innerText = kode;
+
+  window.onload = () => {
+    setTimeout(() => window.print(), 500);
+  };
+</script>
+
+</body>
+</html>
