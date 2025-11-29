@@ -220,7 +220,7 @@ diteruskan.forEach(id => {
 });
 let check= (getParam("check") || "").split(",").map( y => y.trim());
 check.forEach(id =>{
-  let ck = document.getElementById(id);
+  let ck = document.getElementById(check);
   if(ck){
     ck.innerHTML  = "✔";
     ck.style.textAlign ="center";
@@ -229,14 +229,6 @@ check.forEach(id =>{
 }
 );
 
-  // Generate QR
-  new QRCode(document.getElementById("qrcode"), {
-    text: kode,
-    width: 70,
-    height: 70
-  });
-
-  document.getElementById("qrtext").innerText = kode;
 
   window.onload = () => {
     setTimeout(() => window.print(), 500);
