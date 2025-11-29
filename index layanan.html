@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>A5 PDF</title>
+ <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+ 
+  <style>
+    @page {
+      size: A5 portrait;
+      margin: 5mm;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      padding: 4px;
+      font-size: 9px;
+      text-align:left;
+    }
+    .a5-wrap {
+      width: 148mm;
+      min-height: 210mm;
+      margin: 0 auto;
+      padding: 5mm;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      position: relative; /* penting agar QR absolute mengacu ke sini */
+    }
+
+    /* QR Code pojok kanan atas */
+    .qr-box {
+      position: absolute;
+      top: 3mm;
+      right: 5mm;
+      text-align: center;
+    }
+    #qrcode {
+      width: 55px;
+      height: 55px;
+    }
+    #qrtext {
+      font-size: 12px;
+      margin-top: 4px;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+<div class="a5-wrap">
+
+  <!-- QR Code pojok kanan atas -->
+
+<table style="width:100%; border-collapse:collapse; font-size:9px;" border="1">
+  <colgroup>
+    <col style="width:4%;">
+    <col style="width:10%;">
+    <col style="width:4%;">
+    <col style="width:10%;">
+    <col style="width:4%;">
+    <col style="width:10%;">
+    <col style="width:3%;">
+    <col style="width:4%;">
+     <col style="width:18%;">
+      <col style="width:25%;">
+    
+  </colgroup>
+  <tr>
+    <td colspan="10" style="text-align:center; font-weight:bold;">
+      LEMBAR DISPOSISI<br>
+DIREKTORAT PERDATA<br>
+SUB DIREKTORAT LAYANAN KEPERDATAAN</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="border-right:0;">Nomor Agenda</td>
+    <td  colspan="7" style="border-left:0;">: {{nomor_agenda}}</td>
+    </tr>
+  <tr>
+    <td colspan="3"style="border-right:0; vertical-align:top; ">Tanggal Diterima</td>
+    <td colspan="7" style="border-left:0;">: {{tanggal_penerimaan}}</td>
+  </tr>
+
+  <tr>
+    <td colspan="3"style="border-right:0;">Tanggal Surat</td>
+    <td colspan="7" style="border-left:0;">: {{tanggal_surat}}</td><tr>
+    <td colspan="3"style="border-right:0;">Nomor Surat</td>
+    <td colspan="7" style="border-left:0;">: {{nomor_surat}}</td>
+  </tr>
+  <tr>
+    <td colspan="3"style="border-right:0;">Asal Surat</td><td colspan="7" style="border-left:0;">:  {{dari}} </td>
+  </tr>
+
+  <tr>
+    <td colspan="3"style="border-right:0;">Hal </td><td colspan="7" style="border-left:0;">: {{ringkasan}}</td>
+  </tr>
+  <tr><td colspan="6" style="border-right:0;"></td><td style="border:0;"></td></tr>
+  <tr>
+    <td style="text-align:center;">✔</td><td style="font-size:12px">SR</td><td></td><td style="font-size:12px">R</td><td></td><td style="font-size:12px">B</td><td colspan="4"style="border-top:0; border-bottom:0;"></td>
+  </tr>
+  <tr><td colspan="6" style="border-right:0;"></td><td style="border:0;"></td></tr>
+<tr>
+  <td></td><td colspan="5">Setuju</td><td style="border:0;"></td><td colspan="4"style="text-align:Center;"><b>Diteruskan Kepada</b></td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Teliti & Pendapat</td><td style="border:0;"></td><td></td><td colspan="2">Kebijakan Layanan Hukum Perdata</td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Untuk Diketahui</td><td style="border:0;"></td><td></td><td colspan="2">Balai Harta Peninggalan Dan Kurator Negara</td>
+</tr>
+<tr>
+    <td></td><td colspan="5">Catat & Simpan /Arsip</td><td style="border:0;"></td><td></td><td colspan="2">Pusat Data Wasiat</td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Laksanakan Sesuai Disposisi Dir. Perdata</td><td style="border:0;"></td><td></td><td colspan="2">Jabatan Fungional Kurator Keperdataan</td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Konsepkan Jadwal</td><td style="border:0;"></td><td></td><td colspan="2">Pembinaan dan Pengawasan Notaris		
+		</td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Untuk Perhatian</td><td style="border:0;"></td><td rowspan="2"></td><td colspan="2" rowspan="2">Penyiapan Dan Pelaksanaan Kebijakan Serta Pengelolaan Data Jaminan Fidusia</td>
+</tr>
+<tr>
+    <td></td><td colspan="5">Lihat Disposisi Saya</td><td style="border:0;"></td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Pelajari</td><td style="border:0;"></td><td rowspan="2"></td><td colspan="2"rowspan="2">Penanganan Permasalahan Di Bidang Jaminan Fidusia		
+		</td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Koordinasikan dengan .......................</td><td style="border:0;"></td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Dirapatkan</td><td style="border:0;"></td><td rowspan="2"></td><td colspan="2" rowspan="2">Penyusunan Pendapat Hukumdan Advokasi Keperdataan		
+		</td>
+</tr>
+<tr>
+    <td></td><td colspan="5">Edarkan</td><td style="border:0;"></td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Monitor Perkembangannya</td><td style="border:0;"></td><td></td><td colspan="2">Layanan Legalisasi</td></tr>
+<tr>
+  <td></td><td colspan="5">Lihat DIPA</td><td style="border:0;"></td><td colspan="4" style="border-left:0; border-right:0;"></td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Dibuatkan Surat</td><td colspan="5"style="text-align:center;"><b>Instruksi / Informasi :</b></td></tr>
+<tr>
+    <td></td><td colspan="5">Update Data</td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Ingatkan Saya</td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Mendampingi Saya					</td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Harap Mewakili</td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Ditindaklanjuti</td><td colspan="3"style="border:0;"></td><td style="border:0;">Paraf :</td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Siapkan Bahan</td><td colspan="3" style="border:0;"></td><td rowspan="3"></td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Siapkan Jawaban</td>
+</tr>
+<tr>
+  <td></td><td colspan="5">Hubungi Yang Bersangkutan</td>
+</tr>
+
+    
+</table>
+
+</div>
+
+<!-- Library QR -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+<script>
+  function getParam(key) {
+    const url = new URL(window.location.href);
+    return url.searchParams.get(key) || "";
+  }
+
+  const kode = getParam("kode");
+  const params = {
+    kode,
+    tanggal_penerimaan: getParam("tanggal_penerimaan"),
+    tanggal_surat: getParam("tanggal_surat"),
+    nomor_surat: getParam("nomor_surat"),
+    dari: getParam("dari"),
+    ringkasan: getParam("ringkasan"),
+    nomor_agenda: getParam("nomor_agenda")
+  };
+
+  function replacePlaceholders() {
+    let html = document.body.innerHTML;
+    Object.keys(params).forEach(k => {
+      html = html.replace(new RegExp(`{{${k}}}`, "g"), params[k]);
+    });
+    document.body.innerHTML = html;
+  }
+  replacePlaceholders();
+
+  // Generate QR
+  new QRCode(document.getElementById("qrcode"), {
+    text: kode,
+    width: 70,
+    height: 70
+  });
+
+  document.getElementById("qrtext").innerText = kode;
+
+  // Print otomatis
+  window.onload = () => {
+    setTimeout(() => window.print(), 500);
+  };
+</script>
+
+</body>
+</html>
