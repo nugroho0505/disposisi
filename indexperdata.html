@@ -220,7 +220,7 @@ diteruskan.forEach(id => {
 });
 let check= (getParam("check") || "").split(",").map( y => y.trim());
 check.forEach(id =>{
-  let ck = document.getElementById(check);
+  let ck = document.getElementById(id);
   if(ck){
     ck.innerHTML  = "✔";
     ck.style.textAlign ="center";
