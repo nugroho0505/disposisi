@@ -210,26 +210,24 @@ SUB DIREKTORAT LAYANAN KEPERDATAAN</td>
     document.body.innerHTML = html;
   }
   replacePlaceholders();
-let diteruskan = (getParam("diteruskan") || "").split(",").map(x => x.trim());
+function applyCheck(paramKey) {
+  let list = (getParam(paramKey) || "")
+    .split(",")
+    .map(x => x.trim())
+    .filter(x => x !== "");
 
-diteruskan.forEach(id => {
-  let td = document.getElementById(id);
-  if (td) {
-    td.innerHTML = "✔";
-    td.style.textAlign = "center";
-    td.style.fontWeight = "bold";
-  }
-});
-let check= (getParam("check") || "").split(",").map( y => y.trim());
-check.forEach(id =>{
-  let ck = document.getElementById(id);
-  if(ck){
-    ck.innerHTML  = "✔";
-    ck.style.textAlign ="center";
-    ck.style.fontWeight ="bold";
-  }
+  list.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.textContent = "✔";
+      el.style.textAlign = "center";
+      el.style.fontWeight = "bold";
+    }
+  });
 }
-);
+
+applyCheck("diteruskan");
+applyCheck("check");
 
   // Print otomatis
   window.onload = () => {
