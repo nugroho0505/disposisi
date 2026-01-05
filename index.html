@@ -64,11 +64,11 @@
 
 <table style="width:100%; border-collapse:collapse; font-size:12px;" border="1">
   <colgroup>
-    <col style="width:25%;">
     <col style="width:30%;">
     <col style="width:5%;">
-    <col style="width:15%;">
-    <col style="width:30%;">
+    <col style="width:25%;">
+    <col style="width:5%;">
+    <col style="width:40%;">
   </colgroup>
   <tr>
     <td colspan="5" style="text-align:center; font-weight:bold;">
@@ -85,7 +85,7 @@
 
   <tr>
     <td rowspan="3" style="border-right:0;">Nomor Agenda/Registrasi</td>
-    <td rowspan="3" colspan="2" style="border-left:0;">: {{nomor_agenda}}</td>
+    <td rowspan="3" colspan="3" style="border-left:0;">: {{nomor_agenda}}</td>
 
     <!-- Kolom yang ingin kamu hilangkan garis bawahnya -->
     <td  border="0" colspan="2" style="border-bottom:0; height=40px;">Tingkat Keamanan :<br>
@@ -121,54 +121,56 @@
     
   </tr>
   <tr>
-    <td style="border-right:0; height:20px; vertical-align:top; padding: 5px ">Tanggal Penerimaan</td>
-    <td colspan="2" style="border-left:0; height:50px; vertical-align:top;">: {{tanggal_penerimaan}}</td>
-    <td colspan="2" style="height:20px; vertical-align:top; padding:5px">Tanggal Penyelesaian</td>
+    <td   style="border-right:0; height:20px; vertical-align:top; padding: 5px ">Tanggal Penerimaan</td>
+    <td colspan="3" style="border-left:0; height:50px; vertical-align:top;">: {{tanggal_penerimaan}}</td>
   </tr>
 
   <tr>
-    <td style="border-right:0; height:15px;">Tanggal Surat</td>
-    <td colspan="4" style="border-left:0; height:15px;">: {{tanggal_surat}}</td><tr>
-    <td style="border-right:0; height:15px;">Nomor Surat</td>
-    <td colspan="4" style="border-left:0; height:15;">: {{nomor_surat}}</td>
+    <td style="border-right:0;">Tanggal Surat</td>
+   <td colspan="4" style="border-left:0;">: {{tanggal_surat}}</td><tr>
+    <td style="border-right:0;">Nomor Surat</td>
+    <td colspan="4" style="border-left:0;">: {{nomor_surat}}</td>
   </tr>
   <tr>
-    <td style="border-right:0; height:35px; vertical-align:top;">Dari</td><td colspan="4" style="border-left:0; height:35px; vertical-align:top;">:  {{dari}} </td>
+    <td style="border-right:0;">Dari</td><td colspan="4" style="border-left:0;">:  {{dari}} </td>
   </tr>
 
   <tr>
-    <td style="border-right:0; height:45px; vertical-align:top;">Ringkasan Isi</td><td colspan="4" style="border-left:0; height:45px; vertical-align:top;">: {{ringkasan}}</td>
+    <td style="border-right:0; height:50px; vertical-align:top;">Ringkasan Isi</td><td colspan="4" style="border-left:0;vertical-align:top;">: {{ringkasan}}</td>
   </tr>
 
   <!-- Bagian Diteruskan Kepada & Disposisi -->
   <tr>
-    <th colspan="3" style="text-align:center;">Diteruskan Kepada :</th>
-    <th colspan="2" style="text-align:center;">Disposisi</th>
+    <th colspan="4" style="text-align:center;">Diteruskan Kepada :</th>
+    <th style="text-align:center;">Disposisi</th>
   </tr>
 
   <tr>
-    <td colspan="2" style="border-bottom:0;">KASUBDIT PROFESI KEPERDATAAN</td>
+    <td colspan="3" style="border-bottom:0; height:20px;">KASUBDIT PROFESI KEPERDATAAN</td>
     <td border="1"></td>
-    <td colspan="2" rowspan="10"></td>
+    <td rowspan="12"></td>
   </tr>
 
-  <tr><td colspan="2" style="border-bottom:0; border-top:0;">KASUBDIT LAYANAN HUKUM PERDATA</td><td border="0"></td></tr>
-  <tr><td colspan="2"style="border-bottom:0; border-top:0;">KEPALA SUB BAGIAN TATA USAHA</td><td border="0"></td></tr>
-  <tr><td colspan="2" style="border-bottom:0; border-top:0;">POKJA BHP & KOMITE BERSAMA</td><td border="0"></td></tr>
-  <tr><td colspan="2" style="border-bottom:0; border-top:0;">POKJA SEKRETARIAT MPPN & MKNP</td><td border="0"></td></tr>
-  <tr><td colspan="2"style="border-bottom:0; border-top:0;">POKJA PENANGANAN FIDUSIA & PKS</td><td border="0"></td></tr>
-  <tr><td colspan="2" style="border-bottom:0; border-top:0;">POKJA PENDAPAT HUKUM, LO & ADVOKASI</td><td border="0"></td></tr>
-  <tr><td colspan="2" style="border-bottom:0; border-top:0;">POKJA DUKUNGAN LAYANAN</td><td border="0"></td></tr>
-  <tr><td colspan="2"style="border-bottom:0; border-top:0;">.........</td></td><tdstyle="border-bottom:0;"></td></tr>
+  <tr><td colspan="3" style="border-bottom:0; border-top:0; height:20px;">KASUBDIT LAYANAN HUKUM PERDATA</td><td border="0"></td></tr>
+  <tr><td colspan="3"style="border-bottom:0; border-top:0; height:20px;">KEPALA SUB BAGIAN TATA USAHA</td><td border="0"></td></tr>
+  <tr>
+    <td colspan="4" style="text-align:center;"><b>POKJA</b></td>
+  </tr>
+  <tr><td style="border-bottom:0; border-top:0;">Pengangkatan & Pemberhentian Notaris</td><td border="0"></td><td style="border-bottom:0; border-top:0; text-align:center;">Fidusia</td><td></td></tr>
+  <tr><td style="border-bottom:0; border-top:0; height:20px;">Perpanjangan Notaris</td><td border="0"></td><td style="border-bottom:0; border-top:0; text-align:center;">Wasiat</td><td></td></tr>
+  <tr><td style="border-bottom:0; border-top:0;height:20px;">Sekretariat MPN & MKN</td><td border="0"></td><td style="border-bottom:0; border-top:0; text-align:center;">Advokasi</td><td></td></tr>
+  <tr><td style="border-bottom:0; border-top:0;height:20px;">Kurator & Pengurus</td><td border="0"></td><td style="border-bottom:0; border-top:0; text-align:center;">Legalisasi</td><td></td></tr>
+  <tr><td style="border-bottom:0; border-top:0;">Penerjemah Tersumpah & Advokat Asing</td><td border="0"></td><td style="border-bottom:0; border-top:0; text-align:center;">Legal Opinion</td><td></td></tr>
+  <tr><td style="border-bottom:0; border-top:0;height:20px;">............</td><td></td><td style="border-bottom:0; border-top:0; text-align:center;">Harta Peninggalan</td><td></td></tr>
+  <tr><td colspan="4" style="border:0; height:15px;"></td></tr>
 
   <tr>
-    <td style="height:60px; vertical-align:top; padding:5px">PARAF :</td>
-    <td style="border-top:0; border-right:0; height:60px"></td><td style="border-left:0;"></td>
+    <td style="height:50px; vertical-align:top; padding:5px">PARAF :</td>
+    <td colspan="2"style="border-top:0; border-right:0; height:60px"></td><td style="border-left:0; border-top:0;"></td>
   </tr>
 </table>
 
 </div>
-
 <!-- Library QR -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
